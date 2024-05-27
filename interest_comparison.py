@@ -11,6 +11,7 @@ decimal_check = '.'
 check_complete = False
 
 #function to validate input and format the strings correctly before turning interests into floats
+#these checks don't currently work as the iteration is wrong, to fix on next look
 while check_complete is False:
     for character_to_remove in interest_1: #remove a forbidden character before converting to float
         interest_1 = interest_1.replace(character_to_remove, '')
