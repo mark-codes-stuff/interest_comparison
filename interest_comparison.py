@@ -24,7 +24,7 @@ def is_number(input_string):
         float(input_string)
         return True
     except ValueError:
-        print(f"This is not a valid number: {input_string}")
+        print(f"### This is not a valid number: {input_string} ###")
         return False
 
 #Function to check interest is valid and convert to float, and divide by 100 if initial value was given with a percentage symbol
@@ -35,7 +35,7 @@ def check_interest(input_string, percentage_symbol):
     if is_number(clean_string) is True:
         interest_float = float_convert(clean_string)
     else:
-        print(f"Problem with converting interest to float in the check_interest function")
+        print(f"### Problem with converting interest to float in the check_interest function ###")
         return None
     
     if is_percentage is True:
@@ -49,7 +49,7 @@ def check_balance(input_string, characters_to_remove):
     if is_number(clean_string) is True:
         balance_float = float_convert(clean_string)
     else:
-        print(f"Problem with converting balance to float in the check_balance function")
+        print(f"### Problem with converting balance to float in the check_balance function ###")
         return None
     return balance_float
 
@@ -59,7 +59,7 @@ def float_convert(input_string):
         new_float = float(input_string)
         return new_float
     except ValueError:
-        print(f"There was a problem converting {input_string} into a float in the float_convert function")
+        print(f"### There was a problem converting {input_string} into a float in the float_convert function ###")
 
 #Function to re-prompt the user if there's an issue with validation
 def re_prompt():
