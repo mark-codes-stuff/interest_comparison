@@ -68,8 +68,26 @@ formatted_interest_1 = check_interest(interest_1, percentage_symbol)
 formatted_interest_2 = check_interest(interest_2, percentage_symbol)
 formatted_balance = check_balance(balance, characters_to_remove)
 
-print(f"Formatted interest 1: {formatted_interest_1}")
-print(f"formatted interest 2: {formatted_interest_2}")
-print(f"Formatted balance: {formatted_balance}")
+print(f"Formatted interest 1 (on initial check): {formatted_interest_1}")
+print(f"formatted interest 2 (on initial check): {formatted_interest_2}")
+print(f"Formatted balance (on initial check): {formatted_balance}")
+
+#Re-prompt the user if there's an issue with validation, can be printed again once corrected
+while formatted_interest_1 is None:
+    interest_1 = input("There appears to be an issue with the way the first interest value was input. Please input the first interest rate again, either as a percentage or a decimal \n")
+    formatted_interest_1 = check_interest(interest_1, percentage_symbol)
+    
+while formatted_interest_2 is None:
+    interest_2 = input("There appears to be an issue with the way the second interest value was input. Please input the second interest rate again, either as a percentage or a decimal \n")
+    formatted_interest_2 = check_interest(interest_2, percentage_symbol)
+
+while formatted_balance is None:
+    balance = input("There appears to be an issue with the way the balance value was input. Please input the balance again, as a number or decimal \n")
+    formatted_balance = check_balance(balance, characters_to_remove)
+
+
+print(f"Formatted interest 1 (after validation complete): {formatted_interest_1}")
+print(f"formatted interest 2 (after validation complete): {formatted_interest_2}")
+print(f"Formatted balance (after validation complete): {formatted_balance}")
 
 #Calculating interest to do later
